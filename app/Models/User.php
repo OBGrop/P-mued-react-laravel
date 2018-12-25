@@ -75,4 +75,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Office::class, 'office_id');
     }
+
+    public function articles()
+    {
+        return $this->hasMany(Article::class, 'user_id');
+    }
 }

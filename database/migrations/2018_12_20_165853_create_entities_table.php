@@ -17,6 +17,8 @@ class CreateEntitiesTable extends Migration
             $table->unsignedInteger('data_mapping_id');
             $table->index('data_mapping_id');
             $table->geospatial('location', '2dsphere');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

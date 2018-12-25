@@ -1,3 +1,4 @@
+import Test from './components/Test'
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -12,12 +13,34 @@ require('./bootstrap');
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-import React from 'react';
+import React, { Component } from 'react'
 import { render } from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-import Example from './components/Example';
+// import AppRoute from './components/App';
+import Example from './components/Example'
+import KnowledgeIndex from './components/knowledge/KnowledgeIndex'
+import RoleIndex from './components/role/RoleIndex'
+import UserIndex from './components/user/UserIndex'
 
-render(<Example />, document.getElementById('main-container'));
+class App extends Component {
+  render () {
+    return (
+      <BrowserRouter>
+        <div>
+          <Switch>
+            <Route exact path='/home' component={Example} />
+            <Route exact path='/knowledge' component={KnowledgeIndex} />
+            <Route exact path='/user' component={UserIndex} />
+            <Route exact path='/role' component={RoleIndex} />
+            <Route exact path='/test' component={Test} />
+          </Switch>
+        </div>
+      </BrowserRouter>
+    )
+  }
+}
+
+render(<App />, document.getElementById('main-container'));
 
 // require('./components/Example');

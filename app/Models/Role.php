@@ -29,24 +29,32 @@ class Role extends Model
     ];
 
     protected $casts = [
-        'can_admin' => 'bool',
-        'can_contact' => 'bool',
-        'can_office' => 'bool',
-        'can_article' => 'bool',
-        'can_report' => 'bool',
-        'can_field' => 'bool',
-        'can_entity' => 'bool',
+        'can_edit_admin' => 'bool',
+        'can_view_article' => 'bool',
+        'can_edit_article' => 'bool',
+        'can_view_contact' => 'bool',
+        'can_edit_contact' => 'bool',
+        'can_view_office' => 'bool',
+        'can_edit_office' => 'bool',
+        'can_view_entity' => 'bool',
+        'can_edit_entity' => 'bool',
+        'can_edit_field' => 'bool',
+        'can_view_report' => 'bool',
         'entity_list' => 'array',
     ];
 
     protected $attributes = [
-        'can_admin' => false,
-        'can_contact' => false,
-        'can_office' => false,
-        'can_article' => false,
-        'can_report' => false,
-        'can_field' => false,
-        'can_entity' => false,
+        'can_edit_admin' => false,
+        'can_view_article' => false,
+        'can_edit_article' => false,
+        'can_view_contact' => false,
+        'can_edit_contact' => false,
+        'can_view_office' => false,
+        'can_edit_office' => false,
+        'can_view_entity' => false,
+        'can_edit_entity' => false,
+        'can_edit_field' => false,
+        'can_view_report' => false,
         'entity_list' => [],
     ];
 
